@@ -18,9 +18,12 @@ The purpose of RpiUnoLink is to get temperature and moisture data from the Tempe
   * sudo apt-get install maven
 
 ### Building DS Links:
-1. Get the code on to Raspberry Pi - **git clone https://github.com/ibm-watson-iot/iot-dslinks.git**
-2. Go to iot-dslinks directory - **cd iot-dslinks**
-3. Build dslinks jar using the command - **mvn clean package**
+1. Get the code on to Raspberry Pi
+   * git clone https://github.com/ibm-watson-iot/iot-dslinks.git
+2. Go to iot-dslinks directory
+   * cd iot-dslinks
+3. Build dslinks jar using the maven command
+   * mvn clean package
 4. Copy dslinks jar to DS Links directories 
   * cp target/dslinks-0.0.1.jar target/classes/RpiSysInfoLink
   * cp target/dslinks-0.0.1.jar target/classes/RpiUnoLink
@@ -47,7 +50,8 @@ The purpose of RpiUnoLink is to get temperature and moisture data from the Tempe
 
 ### Using RpiUnoLink: 
 1. Raspberry Pi with IBM Edge Analytics Agent configured to connect to IBM Watson IoT Platform. Refer [Edge Analytics](https://developer.ibm.com/recipes/tutorials/getting-started-with-edge-analytics-in-watson-iot-platform/) Recipe
-2. Make ready the Arduino Uno board with given Sketch Program
+2. Make ready the Arduino Uno board with Sketch
+   * [Sketch Program](https://github.com/ibm-watson-iot/iot-dslinks/ArduinoSketches/sketch_moisture.ino )
 3. Connect required sensors to Uno by referring to details in recipe
    * [Alerts and Actions with Edge Analytics](Need to publish the recipe)
 4. Connect Arduino Uno board to Raspberry Pi using USB Cable
