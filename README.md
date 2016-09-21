@@ -18,7 +18,7 @@ The purpose of RpiUnoLink is to get temperature and moisture data from the Tempe
   * sudo apt-get install maven
 
 ### Building DS Links:
-1. Get the code on to Raspberry Pi - **git clone git@github.com:ibm-watson-iot/iot-dslinks.git**
+1. Get the code on to Raspberry Pi - **git clone https://github.com/ibm-watson-iot/iot-dslinks.git**
 2. cd iot-dslinks
 3. Command to build RpiSysInfo DS Link - **mvn clean package exec:exec@copy-jar-to-RpiSysInfoLink**
 4. Command to build RpiUno DS Link - **mvn clean package exec:exec@copy-jar-to-RpiUnoLink**
