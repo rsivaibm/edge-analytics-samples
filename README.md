@@ -1,7 +1,7 @@
 # iot-dslinks
 The **iot-dslinks** repository contains the code for DS Links implemented by **IBM IoT Client Library team** to be used with IBM Edge Analytics Agent. Refer [Edge Analytics](https://developer.ibm.com/recipes/tutorials/getting-started-with-edge-analytics-in-watson-iot-platform/) recipe to get to know about how to install and configure IBM Edge Analytics Agent on Raspberry Pi.
 
-This respository contains the code for DS Links to be used with Raspberry Pi Device. 
+This respository contains the code for DS Links to be used with Raspberry Pi Device.
 #### Raspberry Pi System Info DS Link (RpiSysInfoLink):
 The purpose of RpiSysInfoLink is to get in-built CPU Temperature from Raspberry Pi and the memory statistics from Raspberry Pi. When we install RpiSysInfoLink on Raspberry Pi configured with IBM Edge Analytcs Agent, we should be able to see the events on IBM Watson IoT Platform.
 #### Raspberry Pi Uno DS Link (RpiUnoLink):
@@ -10,7 +10,7 @@ The purpose of RpiUnoLink is to get temperature and moisture data from the Tempe
 ## Steps to play around with DS Links:
 ### DS Links Build Prerequisites:
 1. Install JDK 1.8 on Raspberry Pi referring to [RpiBlog](http://www.rpiblog.com/2014/03/installing-oracle-jdk-8-on-raspberry-pi.html)
-2. Install git on Raspberry Pi 
+2. Install git on Raspberry Pi
   * sudo apt-get update
   * sudo apt-get install git
 3. Install maven on Raspberry Pi
@@ -24,7 +24,7 @@ The purpose of RpiUnoLink is to get temperature and moisture data from the Tempe
    * cd iot-dslinks
 3. Build dslinks jar using the maven command
    * mvn clean package
-4. Copy dslinks jar to DS Links directories 
+4. Copy dslinks jar to DS Links directories
   * cp target/dslinks-0.0.1.jar target/classes/RpiSysInfoLink
   * cp target/dslinks-0.0.1.jar target/classes/RpiUnoLink
 
@@ -35,7 +35,7 @@ The purpose of RpiUnoLink is to get temperature and moisture data from the Tempe
 3. Stop and Start DSA Server
    * sudo service dsa stop
    * sudo service dsa start
-4. Log into DGLux Tool, we should be able to see new link with the name **RpiSysInfoLink** 
+4. Log into DGLux Tool, we should be able to see new link with the name **RpiSysInfoLink**
    * Data->sys->links
 5. Restart IBM Edge Analytcs Agent link from DGLux Tool
    * Data->sys->links->ibm-watson-iot-edge-analytics-dslink-java-1.0.0->Restart Link
@@ -48,10 +48,10 @@ The purpose of RpiUnoLink is to get temperature and moisture data from the Tempe
 10. Logout from DGLux Tool and Stop DSA Server
   * sudo service dsa stop
 
-### Using RpiUnoLink: 
+### Using RpiUnoLink:
 1. Raspberry Pi with IBM Edge Analytics Agent configured to connect to IBM Watson IoT Platform. Refer [Edge Analytics](https://developer.ibm.com/recipes/tutorials/getting-started-with-edge-analytics-in-watson-iot-platform/) Recipe
 2. Make ready the Arduino Uno board with Sketch
-   * [Sketch Program](https://github.com/ibm-watson-iot/iot-dslinks/ArduinoSketches/sketch_moisture.ino )
+   * [Sketch Program](https://github.com/ibm-watson-iot/iot-dslinks/blob/master/ArduinoSketches/sketch_moisture.ino)
 3. Connect required sensors to Uno by referring to details in recipe
    * [Alerts and Actions with Edge Analytics](Need to publish the recipe)
 4. Connect Arduino Uno board to Raspberry Pi using USB Cable
@@ -62,7 +62,7 @@ The purpose of RpiUnoLink is to get temperature and moisture data from the Tempe
 6. Copy **iot-dslinks/target/classes/RpiUnoLink** directory to **DSA-PATH/dglux-server/dslinks**
    * sudo cp -r target/classes/RpiUnoLink  /opt/dsa/dglux-server/dslinks
 7. Stop and Start DSA Server
-   * sudo service dsa stop 
+   * sudo service dsa stop
    * sudo service dsa start
 8. Log into DGLux Tool, we should be able to see new link with the name **RpiUnoLink**
    * Data->sys->links
@@ -79,5 +79,5 @@ The purpose of RpiUnoLink is to get temperature and moisture data from the Tempe
   * sudo service dsa stop
 
 
-#### Note: 
+#### Note:
 If we are installing **IBM Edge Analytics Agent Link** in DGLux Tool for more than once, then we see random names for IBM Edge Analytics Agent node data under **Data->downstream**. Need to avoid these random names in order to make the **RpiSysInfoLink** and **RpiUnoLink** work properly with **IBM Watson IoT Platform**. Stop DSA Server, remove these random entries present in the file **conns.json** located at the path **DSA-PATH/dglux-server/conns.json** and Start DSA Server.
