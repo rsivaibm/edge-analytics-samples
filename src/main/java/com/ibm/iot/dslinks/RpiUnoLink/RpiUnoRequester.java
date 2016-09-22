@@ -92,20 +92,20 @@ public class RpiUnoRequester {
     }
 
     private static void invokeDeviceAction(DSLink link,String action){
-        String blinkPath = link.getPath() + "/RpiUno/Blink";
-        String blink5Path = link.getPath() + "/RpiUno/Blink5";
-        String blink10Path = link.getPath() + "/RpiUno/Blink10";
+        String buzzPath = link.getPath() + "/RpiUno/Buzz";
+        String buzz5Path = link.getPath() + "/RpiUno/Buzz5";
+        String buzz10Path = link.getPath() + "/RpiUno/Buzz10";
         String rebootPath = link.getPath() + "/RpiUno/Reboot";
         InvokeRequest request;
 
         if(action.compareToIgnoreCase("reboot")==0)
              request = new InvokeRequest(rebootPath);
-        else if(action.compareToIgnoreCase("blink5")==0)
-             request = new InvokeRequest(blink5Path);
-        else if(action.compareToIgnoreCase("blink10")==0)
-             request = new InvokeRequest(blink10Path);
+        else if(action.compareToIgnoreCase("buzz5")==0)
+             request = new InvokeRequest(buzz5Path);
+        else if(action.compareToIgnoreCase("buzz10")==0)
+             request = new InvokeRequest(buzz10Path);
         else
-             request = new InvokeRequest(blinkPath);
+             request = new InvokeRequest(buzzPath);
 
         link.getRequester().invoke(request, new Handler<InvokeResponse>() {
         @Override
