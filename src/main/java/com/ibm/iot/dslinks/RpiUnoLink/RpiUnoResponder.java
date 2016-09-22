@@ -112,7 +112,7 @@ public class RpiUnoResponder implements SerialPortEventListener {
         builder.build();
     }
 
-    private void initBluzz5ActionNode(Node node) {
+    private void initBuzz5ActionNode(Node node) {
         NodeBuilder builder = node.createChild("Buzz5");
         builder.setAction(new Action(Permission.READ, new Handler<ActionResult>() {
             @Override
