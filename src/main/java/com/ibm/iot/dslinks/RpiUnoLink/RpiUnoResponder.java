@@ -54,9 +54,9 @@ public class RpiUnoResponder implements SerialPortEventListener {
     private BufferedWriter output;
     private final int TIME_OUT = 2000;
     private final int DATA_RATE = 9600;
-    private final int BLINK = 101;
-    private final int BLINK5 = 105;
-    private final int BLINK10 = 110;
+    private final int BUZZ = 101;
+    private final int BUZZ5 = 105;
+    private final int BUZZ10 = 110;
     private final int REBOOT = 115;
 
 
@@ -76,9 +76,9 @@ public class RpiUnoResponder implements SerialPortEventListener {
         if(serialInit){
             initTempNode(node);
             initSensorNode(node);
-            initBlinkActionNode(node);
-            initBlink5ActionNode(node);
-            initBlink10ActionNode(node);
+            initBuzzActionNode(node);
+            initBuzz5ActionNode(node);
+            initBuzz10ActionNode(node);
             initRebootActionNode(node);
         }
     }
@@ -95,52 +95,52 @@ public class RpiUnoResponder implements SerialPortEventListener {
         sensorNode.setValueType(ValueType.DYNAMIC);
     }
 
-    private void initBlinkActionNode(Node node) {
-        NodeBuilder builder = node.createChild("Blink");
+    private void initBuzzActionNode(Node node) {
+        NodeBuilder builder = node.createChild("Buzz");
         builder.setAction(new Action(Permission.READ, new Handler<ActionResult>() {
             @Override
             public void handle(ActionResult event) {
-                LOGGER.info("Responder Blink action invoked from requester");
+                LOGGER.info("Responder Buzz action invoked from requester");
                 try {
-                      output.write(BLINK);
+                      output.write(BUZZ);
 		      output.flush();
                 } catch(Exception e) { e.printStackTrace(); }
                 Table t = event.getTable();
-                t.addRow(Row.make(new Value("Blink on Arduino Uno Invoked")));
+                t.addRow(Row.make(new Value("Buzz on Arduino Uno Invoked")));
             }
         }).addResult(new Parameter("response", ValueType.STRING)));
         builder.build();
     }
 
-    private void initBlink5ActionNode(Node node) {
-        NodeBuilder builder = node.createChild("Blink5");
+    private void initBluzz5ActionNode(Node node) {
+        NodeBuilder builder = node.createChild("Buzz5");
         builder.setAction(new Action(Permission.READ, new Handler<ActionResult>() {
             @Override
             public void handle(ActionResult event) {
-                LOGGER.info("Responder Blink5 action invoked from requester");
+                LOGGER.info("Responder Buzz5 action invoked from requester");
                 try {
-                      output.write(BLINK5);
+                      output.write(BUZZ5);
 		      output.flush();
                 } catch(Exception e) { e.printStackTrace(); }
                 Table t = event.getTable();
-                t.addRow(Row.make(new Value("Blink5 on Arduino Uno Invoked")));
+                t.addRow(Row.make(new Value("Buzz5 on Arduino Uno Invoked")));
             }
         }).addResult(new Parameter("response", ValueType.STRING)));
         builder.build();
     }
 
-    private void initBlink10ActionNode(Node node) {
-        NodeBuilder builder = node.createChild("Blink10");
+    private void initBuzz10ActionNode(Node node) {
+        NodeBuilder builder = node.createChild("Buzz10");
         builder.setAction(new Action(Permission.READ, new Handler<ActionResult>() {
             @Override
             public void handle(ActionResult event) {
-                LOGGER.info("Responder Blink10 action invoked from requester");
+                LOGGER.info("Responder Buzz10 action invoked from requester");
                 try {
-                      output.write(BLINK10);
+                      output.write(BUZZ10);
 		      output.flush();
                 } catch(Exception e) { e.printStackTrace(); }
                 Table t = event.getTable();
-                t.addRow(Row.make(new Value("Blink10 on Arduino Uno Invoked")));
+                t.addRow(Row.make(new Value("Buzz10 on Arduino Uno Invoked")));
             }
         }).addResult(new Parameter("response", ValueType.STRING)));
         builder.build();
