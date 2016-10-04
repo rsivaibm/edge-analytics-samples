@@ -28,8 +28,8 @@ void loop() {
     } else {
       buzz(1);
     }
- } 
-  
+ }
+
   strcpy(deviceEvent, "");
   char val[10];
   strcat(deviceEvent,"status temp:");
@@ -39,7 +39,7 @@ void loop() {
   int sensorValue = analogRead(MOSPIN);
   itoa(sensorValue/10, val, 10);
   strcat(deviceEvent,val);
-  
+
   Serial.println(deviceEvent);
   delay(1000);
 }
@@ -62,8 +62,9 @@ void buzz(int n){
 }
 
 void reboot(void) {
+  buzz(1);
   wdt_enable(WDTO_15MS); // turn on the WatchDog and wait.
-  for(;;) { 
+  for(;;) {
     // do nothing and wait for the eventual...
-  } 
+  }
 }
