@@ -1,24 +1,24 @@
 # iot-dslinks
-The **iot-dslinks** repository contains the code for DS Links implemented by **IBM IoT Client Library team** to be used with IBM Edge Analytics Agent. Refer [Edge Analytics](https://developer.ibm.com/recipes/tutorials/getting-started-with-edge-analytics-in-watson-iot-platform/) recipe to get to know about how to install and configure IBM Edge Analytics Agent on Raspberry Pi.
+The **iot-dslinks** repository contains the code for DS Links implemented by **IBM IoT Client Library team** to be used with IBM Edge Analytics Agent. Refer [Edge Analytics](https://developer.ibm.com/recipes/tutorials/getting-started-with-edge-analytics-in-watson-iot-platform/) recipe to get to know about how to install and configure IBM Edge Analytics Agent on Raspberry Pi 3.
 
-This respository contains the code for DS Links to be used with Raspberry Pi Device.
+This respository contains the code for DS Links to be used with Raspberry Pi 3 Device.
 #### Raspberry Pi System Info DS Link (RpiSysInfoLink):
 The purpose of RpiSysInfoLink is to get in-built CPU Temperature from Raspberry Pi and the memory statistics from Raspberry Pi. When we install RpiSysInfoLink on Raspberry Pi configured with IBM Edge Analytcs Agent, we should be able to see the events on IBM Watson IoT Platform.
 #### Raspberry Pi Uno DS Link (RpiUnoLink):
-The purpose of RpiUnoLink is to get temperature and moisture data from the Temperature Sensor and Moisture Sensor connected to Arduino Uno Device and Arduino Uno is attached to Raspberry Pi. With RpiUnoLink installed on Raspberry Pi configured with IBM Edge Analytics Agent, we should be able to get the events on to IBM Watson IoT Platform and also perform device actions like LED Blink and Reboot of Arduino Uno by handling the local alerts from IBM Edge Analytics Agent. To get complete details on how to work with alerts and device actions, refer to [Alerts and Actions with Edge Analytics](Need to publish the recipe) Recipe.
+The purpose of RpiUnoLink is to get temperature and moisture data from the Temperature Sensor and Moisture Sensor connected to Arduino Uno Device and Arduino Uno is attached to Raspberry Pi. With RpiUnoLink installed on Raspberry Pi 3 configured with IBM Edge Analytics Agent, we should be able to get the events on to IBM Watson IoT Platform and also perform device actions like LED Blink and Reboot of Arduino Uno by handling the local alerts from IBM Edge Analytics Agent. To get complete details on how to work with alerts and device actions, refer to [Alerts and Actions with Edge Analytics](https://developer.ibm.com/recipes/tutorials/handling-alerts-and-device-actions-with-edge-analytics-in-ibm-watson-iot-platform/) Recipe.
 
 ## Steps to play around with DS Links:
 ### DS Links Build Prerequisites:
-1. Install JDK 1.8 on Raspberry Pi referring to [RpiBlog](http://www.rpiblog.com/2014/03/installing-oracle-jdk-8-on-raspberry-pi.html)
-2. Install git on Raspberry Pi
+1. Install JDK 1.8 on Raspberry Pi 3 referring to [RpiBlog](http://www.rpiblog.com/2014/03/installing-oracle-jdk-8-on-raspberry-pi.html)
+2. Install git on Raspberry Pi 3
   * sudo apt-get update
   * sudo apt-get install git
-3. Install maven on Raspberry Pi
+3. Install maven on Raspberry Pi 3
   * sudo apt-get update
   * sudo apt-get install maven
 
 ### Building DS Links:
-1. Get the code on to Raspberry Pi
+1. Get the code on to Raspberry Pi 3
    * git clone https://github.com/ibm-watson-iot/iot-dslinks.git
 2. Go to iot-dslinks directory
    * cd iot-dslinks
@@ -39,7 +39,7 @@ The purpose of RpiUnoLink is to get temperature and moisture data from the Tempe
    * Data->sys->links
 5. Restart IBM Edge Analytcs Agent link from DGLux Tool
    * Data->sys->links->ibm-watson-iot-edge-analytics-dslink-java-1.0.0->Restart Link
-6. We should see values retrieved from Raspberry Pi device in DGLux Matrix Window
+6. We should see values retrieved from Raspberry Pi 3 device in DGLux Matrix Window
    * Data->downstream->RpiSysInfo->RpiSysInfo
 7. We should be able to see a new attached device added by IBM Edge Analytics Agent on IBM Watson IoT Platform with the name **RpiSysInfo**
 8. Use steps described in [Edge Analytics](https://developer.ibm.com/recipes/tutorials/getting-started-with-edge-analytics-in-watson-iot-platform/) Recipe to play around with data filtering
@@ -53,9 +53,9 @@ The purpose of RpiUnoLink is to get temperature and moisture data from the Tempe
 2. Make ready the Arduino Uno board with Sketch
    * [Sketch Program](https://github.com/ibm-watson-iot/iot-dslinks/blob/master/ArduinoSketches/sketch_moisture.ino)
 3. Connect required sensors to Uno by referring to details in recipe
-   * [Alerts and Actions with Edge Analytics](Need to publish the recipe)
-4. Connect Arduino Uno board to Raspberry Pi using USB Cable
-5. Install Java RXTX Library in Raspberry Pi for Serial Communication with Arduino Uno board
+   * [Alerts and Actions with Edge Analytics](https://developer.ibm.com/recipes/tutorials/handling-alerts-and-device-actions-with-edge-analytics-in-ibm-watson-iot-platform/)
+4. Connect Arduino Uno board to Raspberry Pi 3 using USB Cable and make sure there exists /dev/ttyACM0 on Raspberry Pi 3
+5. Install Java RXTX Library in Raspberry Pi 3 for Serial Communication with Arduino Uno board
    * sudo apt-get install librxtx-java
    * sudo cp /usr/lib/jni/librxtxSerial.so $JAVA_HOME/jre/lib/arm
    * sudo cp /usr/share/java/RXTXcomm.jar $JAVA_HOME/jre/lib/
@@ -72,7 +72,7 @@ The purpose of RpiUnoLink is to get temperature and moisture data from the Tempe
    * Data->downstream->RpiUno->RpiUno
 11. We should be able to see a new attached device added by IBM Edge Analytics Agent on IBM Watson IoT Platform with the name **RpiUno**
 12. Use steps described in [Edge Analytics](https://developer.ibm.com/recipes/tutorials/getting-started-with-edge-analytics-in-watson-iot-platform/) Recipe to play around with data filtering
-13. Use steps described in [Alerts and Actions with Edge Analytics](Need to publish the recipe) Recipe to play around with alerts and device actions
+13. Use steps described in [Alerts and Actions with Edge Analytics](https://developer.ibm.com/recipes/tutorials/handling-alerts-and-device-actions-with-edge-analytics-in-ibm-watson-iot-platform/) Recipe to play around with alerts and device actions
 14. Uninstall RpiUnoLink from DSA Server
   * Data->sys->links->RpiSysInfo->Uninstall Link
 15. Logout from DGLux Tool and Stop DSA Server
