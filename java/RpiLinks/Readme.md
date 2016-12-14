@@ -28,7 +28,7 @@ The purpose of RpiUnoLink is to get temperature and moisture data from the Tempe
 
 ### Using RpiSysInfoLink:
 1. Raspberry Pi with IBM Edge Analytics Agent configured to connect to IBM Watson IoT Platform. Refer [Edge Analytics](https://developer.ibm.com/recipes/tutorials/getting-started-with-edge-analytics-in-watson-iot-platform/) Recipe
-2. Copy **iot-dslinks/java/RpiLinks/target/classes/RpiSysInfoLink** directory to **DSA-PATH/dglux-server/dslinks**
+2. Copy **target/classes/RpiSysInfoLink** directory to **DSA-PATH/dglux-server/dslinks**
    * sudo cp -r target/classes/RpiSysInfoLink /opt/dsa/dglux-server/dslinks
 3. Stop and Start DSA Server
    * sudo service dsa stop
@@ -57,7 +57,7 @@ The purpose of RpiUnoLink is to get temperature and moisture data from the Tempe
    * sudo apt-get install librxtx-java
    * sudo cp /usr/lib/jni/librxtxSerial.so $JAVA_HOME/jre/lib/arm
    * sudo cp /usr/share/java/RXTXcomm.jar $JAVA_HOME/jre/lib/
-6. Copy **iot-dslinks/java/RpiLinks/target/classes/RpiUnoLink** directory to **DSA-PATH/dglux-server/dslinks**
+6. Copy **target/classes/RpiUnoLink** directory to **DSA-PATH/dglux-server/dslinks**
    * sudo cp -r target/classes/RpiUnoLink  /opt/dsa/dglux-server/dslinks
 7. Stop and Start DSA Server
    * sudo service dsa stop
