@@ -80,5 +80,5 @@ The purpose of RpiUnoLink is to get temperature and moisture data from the Tempe
 #### Note:
 If we are installing **IBM Edge Analytics Agent Link** in DGLux Tool for more than once, then we see random names for IBM Edge Analytics Agent node data under **Data->downstream**. Need to avoid these random names in order to make the **RpiSysInfoLink** and **RpiUnoLink** work properly with **IBM Watson IoT Platform**. Stop DSA Server, remove these random entries present in the file **conns.json** located at the path **DSA-PATH/dglux-server/conns.json** and Start DSA Server.
 
-#### License:
-The library is shipped with Eclipse Public License. For more information about the public licensing, see the [License file](https://github.com/Lokesh-K-Haralakatta/iot-dslinks/blob/master/java/RpiLinks/LICENSE).
+## License:
+The library is shipped with Eclipse Public License. For more information about the public licensing, see the [License file](https://github.com/ibm-watson-iot/iot-dslinks/blob/master/java/RpiLinks/LICENSE).
