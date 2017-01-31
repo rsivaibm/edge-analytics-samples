@@ -8,4 +8,4 @@ information and DS Link to get device data from attached Arduino Uno written usi
 
 
 # License
-The dslinks samples are shipped with Eclipse Public License and refer to the [License](https://github.com/ibm-watson-iot/edge-analytics-samples/edit/master/dslinks/LICENSE) file for more information about the licensing.
+The dslinks samples are shipped with Eclipse Public License and refer to the [License](https://github.com/ibm-watson-iot/edge-analytics-samples/blob/master/dslinks/LICENSE) file for more information about the licensing.
