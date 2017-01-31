@@ -5,3 +5,7 @@ Refer [Edge Analytics recipe](https://developer.ibm.com/recipes/tutorials/gettin
 ###DS Links in Java
 We have DS Links written using Java placed under the directory [Java](https://github.com/ibm-watson-iot/iot-dslinks/tree/master/java). We have DS Link for Raspberry Pi 3 to provide system 
 information and DS Link to get device data from attached Arduino Uno written using Java.
+
+
+# License
+The dslinks samples are shipped with Eclipse Public License and refer to the [License](https://github.com/ibm-watson-iot/edge-analytics-samples/edit/master/dslinks/LICENSE) file for more information about the licensing.
