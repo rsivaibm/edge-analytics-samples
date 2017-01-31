@@ -17,9 +17,9 @@ The purpose of RpiUnoLink is to get temperature and moisture data from the Tempe
 
 ### Building DS Links:
 1. Get the code on to Raspberry Pi 3
-   * git clone https://github.com/ibm-watson-iot/iot-dslinks.git
-2. Go to iot-dslinks/java/RpiLinks directory
-   * cd iot-dslinks/java/RpiLinks
+   * git clone https://github.com/ibm-watson-iot/edge-analytics-samples.git
+2. Go to dslinks/java/RpiLinks directory
+   * cd dslinks/java/RpiLinks
 3. Build dslinks jar using the maven command
    * mvn clean package
 4. Copy dslinks jar to DS Links directories
@@ -49,7 +49,7 @@ The purpose of RpiUnoLink is to get temperature and moisture data from the Tempe
 ### Using RpiUnoLink:
 1. Raspberry Pi with IBM Edge Analytics Agent configured to connect to IBM Watson IoT Platform. Refer [Edge Analytics](https://developer.ibm.com/recipes/tutorials/getting-started-with-edge-analytics-in-watson-iot-platform/) Recipe
 2. Make ready the Arduino Uno board with Sketch
-   * [Sketch Program](https://github.com/ibm-watson-iot/iot-dslinks/blob/master/ArduinoSketches/sketch_moisture.ino)
+   * [Sketch Program](https://github.com/ibm-watson-iot/edge-analytics-samples/blob/master/dslinks/ArduinoSketches/sketch_moisture.ino)
 3. Connect required sensors to Uno by referring to details in recipe
    * [Alerts and Actions with Edge Analytics](https://developer.ibm.com/recipes/tutorials/handling-alerts-and-device-actions-with-edge-analytics-in-ibm-watson-iot-platform/)
 4. Connect Arduino Uno board to Raspberry Pi 3 using USB Cable and make sure there exists /dev/ttyACM0 on Raspberry Pi 3
@@ -81,4 +81,4 @@ The purpose of RpiUnoLink is to get temperature and moisture data from the Tempe
 If we are installing **IBM Edge Analytics Agent Link** in DGLux Tool for more than once, then we see random names for IBM Edge Analytics Agent node data under **Data->downstream**. Need to avoid these random names in order to make the **RpiSysInfoLink** and **RpiUnoLink** work properly with **IBM Watson IoT Platform**. Stop DSA Server, remove these random entries present in the file **conns.json** located at the path **DSA-PATH/dglux-server/conns.json** and Start DSA Server.
 
 ## License:
-The library is shipped with Eclipse Public License. For more information about the public licensing, see the [License file](https://github.com/ibm-watson-iot/iot-dslinks/blob/master/java/RpiLinks/LICENSE).
+The library is shipped with Eclipse Public License. For more information about the public licensing, see the [License file](https://github.com/ibm-watson-iot/edge-analytics-samples/blob/master/dslinks/LICENSE).
